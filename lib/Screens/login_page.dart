@@ -14,7 +14,7 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-bool _isVisible = false;
+bool _isVisible = true;
 
 class _LoginPageState extends State<LoginPage> {
   @override
