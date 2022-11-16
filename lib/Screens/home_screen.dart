@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:charts_flutter_new/flutter.dart' as charts;
 
+
+import '../All Items/green_items.dart';
 import '../Bar Chart/bar_chart.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -11,30 +12,28 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+
+
+
 class _HomeScreenState extends State<HomeScreen> {
-
-  List<charts.Series<bchart, String>> series = [
-
-    charts.Series(
-      id: "Grosary",
-      data: data,
-      domainFn: (bchart series, _) => series.Grosary,
-      measureFn: (bchart series, _) => series.financial,
-      // colorFn: (bchart series,_)=>series.color,
-    )
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
+        body: SingleChildScrollView(
+      child: Container(
+        width: double.maxFinite,
+        color: Colors.blue.withOpacity(.15),
         child: Column(
           children: [
             Container(
               margin: const EdgeInsets.all(10),
               height: 45,
               // width: 240,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.white,
+              ),
               child: const TextField(
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search),
@@ -46,44 +45,209 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(5),
-              margin: const EdgeInsets.only(
-                  left: 5, bottom: 10, top: 0, right: 5),
-              width: 380,
-              height: 500,
+              margin: const EdgeInsets.all(10),
+              height: 320,
+              // padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white.withOpacity(.7),
-                  border: Border.all(
-                    color: Colors.black38,
-                    width: 1,
-                  )),
-              child: Stack(children: [
-                Container(
-                    alignment: Alignment.topCenter,
-                    child: const Text("Pandharpur Market",
-                        style: TextStyle(fontSize: 18))),
-                charts.BarChart(
-                  series,
-                  animate: true,
+                color: Colors.white,
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(15)),
+                border: Border.all(
+                  color: Colors.grey,
                 ),
-              ]),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    width: double.maxFinite,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.teal.withOpacity(.7),
+                      borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(15),
+                          topLeft: Radius.circular(15)),
+                    ),
+                    child: const Center(
+                        child: Text(
+                      "PaleBhajya",
+                      style: TextStyle(fontSize: 22),
+                    )),
+                  ),
+                  GreedVB(),
+                  Container(
+                      width: double.maxFinite,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(.7),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          Center(
+                              child: Expanded(
+                                  child: Text(
+                            "View More",
+                            style: TextStyle(fontSize: 18),
+                          ))),
+                          Center(
+                              child: Expanded(child: Icon(Icons.navigate_next)))
+                        ],
+                      )),
+                ],
+              ),
             ),
             Container(
-              height: 400,
+              margin: EdgeInsets.all(10),
+              height: 320,
+              // padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(25)),
-                  color: const Color(0xFF0c9869),
-                  border: Border.all(
-                    color: Colors.black38,
-                    width: 1,
-                  )),
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(15)),
+                border: Border.all(
+                  color: Colors.grey,
+                ),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    width: double.maxFinite,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.teal.withOpacity(.7),
+                      borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(15),
+                          topLeft: Radius.circular(15)),
+                    ),
+                    child: Center(
+                        child: Text(
+                      "PaleBhajya",
+                      style: TextStyle(fontSize: 22),
+                    )),
+                  ),
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      child: GridView.builder(
+                        itemCount: 8,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            color: Colors.blue,
+                          );
+                        },
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                      width: double.maxFinite,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(.7),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Center(
+                              child: Expanded(
+                                  child: Text(
+                            "View More",
+                            style: TextStyle(fontSize: 18),
+                          ))),
+                          Center(
+                              child: Expanded(child: Icon(Icons.navigate_next)))
+                        ],
+                      )),
+                ],
+              ),
             ),
+            Container(
+              margin: EdgeInsets.all(10),
+              height: 320,
+              // padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(15),
+                    topLeft: Radius.circular(15)),
+                border: Border.all(
+                  color: Colors.grey,
+                ),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    width: double.maxFinite,
+                    height: 30,
+                    decoration: BoxDecoration(
+                      color: Colors.teal.withOpacity(.7),
+                      borderRadius: const BorderRadius.only(
+                          topRight: Radius.circular(15),
+                          topLeft: Radius.circular(15)),
+                    ),
+                    child: Center(
+                        child: Text(
+                      "PaleBhajya",
+                      style: TextStyle(fontSize: 22),
+                    )),
+                  ),
+                  Flexible(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      child: GridView.builder(
+                        itemCount: 8,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            color: Colors.blue,
+                          );
+                        },
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                      width: double.maxFinite,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(.7),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Center(
+                              child: Expanded(
+                                  child: Text(
+                            "View More",
+                            style: TextStyle(fontSize: 18),
+                          ))),
+                          Center(
+                              child: Expanded(child: Icon(Icons.navigate_next)))
+                        ],
+                      )),
+                ],
+              ),
+            )
           ],
         ),
       ),
-    );
+    ));
   }
+
+
 }
+

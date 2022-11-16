@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'package:charts_flutter_new/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 class bchart {
   String Grosary;
@@ -85,3 +85,12 @@ List<bchart> data = [
 
 ];
 
+List<charts.Series<bchart, String>> series = [
+  charts.Series(
+    id: "Grosary",
+    data: data,
+    domainFn: (bchart series, _) => series.Grosary,
+    measureFn: (bchart series, _) => series.financial,
+    // colorFn: (bchart series,_)=>series.color,
+  )
+];
