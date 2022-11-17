@@ -49,66 +49,54 @@ class GreenItems {
   });
 }
 
-Widget GridItems(GreenItems item) => Column(
-  children: [
-    Flexible(
-      flex: 8,
-      child: Container(
-          color: Colors.blue,
-          child: Image(
-            image: item.AI,
-            fit: BoxFit.fill,
+// Widget GridItems(GreenItems item) => Column(
+//   children: [
+//     Container(
+//         color: Colors.blue,
+//         child: Image(
+//           image: item.AI,
+//           fit: BoxFit.fill,
+//
+//         )
+//     ),
+//     Container(
+//       color: Colors.blue.withOpacity(.15),
+//       child: Row(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         crossAxisAlignment: CrossAxisAlignment.center,
+//         children: const [
+//           Center(
+//               child: Expanded(
+//                   child: Text(
+//                     "View",
+//                     style: TextStyle(color: Colors.red),
+//                   ))),
+//           Center(child: Expanded(child: Icon(Icons.navigate_next)))
+//         ],
+//       ),
+//     )
+//   ],
+// );
 
-          )
-      ),
-    ),
-    Flexible(
-      flex: 3,
-      child: Container(
-        color: Colors.blue.withOpacity(.15),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Center(
-                child: Expanded(
-                    child: Text(
-                      "View",
-                      style: TextStyle(color: Colors.red),
-                    ))),
-            Center(child: Expanded(child: Icon(Icons.navigate_next)))
-          ],
-        ),
-      ),
-    )
-  ],
-);
-
-
-class GreedVB extends StatefulWidget {
-  const GreedVB({Key? key}) : super(key: key);
-
-  @override
-  State<GreedVB> createState() => _GreedVBState();
-}
-
-class _GreedVBState extends State<GreedVB> {
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: 6,
-      padding: const EdgeInsets.all(10),
-      itemBuilder:(context, index) {
-        return Container(
-          color: Colors.blue,
-        );
-      },
-      gridDelegate:
-      const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-      ),
-    );
-  }
-}
+//
+// class GreedVB extends StatefulWidget {
+//   const GreedVB({Key? key}) : super(key: key);
+//
+//   @override
+//   State<GreedVB> createState() => _GreedVBState();
+// }
+//
+// class _GreedVBState extends State<GreedVB> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder(
+//       itemCount: 6,
+//       padding: const EdgeInsets.all(10),
+//       itemBuilder:(context, index) {
+//         return Container(
+//           color: Colors.blue,
+//         );
+//       },
+//     );
+//   }
+// }
